@@ -1,6 +1,7 @@
 
 
 #include <iostream>
+#include <random>
 using namespace std;
 
 void rules();
@@ -10,8 +11,17 @@ void rules();
 /// <returns></returns>
 int main()
 {
-   
-    rules();
+    string seeRules;
+    cout << "Cribbage" << endl;
+    cout << endl;
+    cout << "Would you like the rules, yes or no? " << flush;
+    cin >> seeRules;
+    transform(seeRules.begin(), seeRules.end(), seeRules.begin(), ::tolower);
+
+    if (seeRules == "yes") {
+        rules();
+    }
+    
 }
 
 void rules() {
