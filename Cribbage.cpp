@@ -5,12 +5,19 @@
 using namespace std;
 
 void rules();
+void seeRules();
 /// <summary>
 /// Cribbage game play 
 /// </summary>
 /// <returns></returns>
 int main()
 {
+    seeRules();
+}
+/// <summary>
+/// Asks the user if they want to see the rules
+/// </summary>
+void seeRules() {
     string seeRules;
     cout << "Cribbage" << endl;
     cout << endl;
@@ -21,9 +28,10 @@ int main()
     if (seeRules == "yes") {
         rules();
     }
-    
 }
-
+/// <summary>
+/// Prints the rules to the user
+/// </summary>
 void rules() {
     cout << "NUMBER OF PLAYERS" << endl;
     cout << "Two or three people can play. Or four people can play two against two as partners. But Cribbage is basically best played by two people, and the rules that follow are for that number." << endl;
