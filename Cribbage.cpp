@@ -9,11 +9,24 @@ void seeRules();
 /// <summary>
 /// Cribbage game play 
 /// </summary>
-/// <returns></returns>
+/// <returns>0 to indicate at the end of main</returns>
 int main()
 {
     seeRules();
+    cout << " This game will have one computer player along with you" << endl;
+   
+    // make players
+    string player1Name;
+    cout << "What is the name of player 1? " << flush;
+    cin >> player1Name;
+
+    cout << "Welcome " << player1Name << endl;
+    return 0;
 }
+
+
+
+
 /// <summary>
 /// Asks the user if they want to see the rules
 /// </summary>
@@ -33,6 +46,9 @@ void seeRules() {
 /// Prints the rules to the user
 /// </summary>
 void rules() {
+    cout << "These are the rules from Bicycle Playing Cards" << endl;
+    cout << "https://bicyclecards.com/how-to-play/cribbage/" << endl;
+    cout << endl;
     cout << "NUMBER OF PLAYERS" << endl;
     cout << "Two or three people can play. Or four people can play two against two as partners. But Cribbage is basically best played by two people, and the rules that follow are for that number." << endl;
     cout << endl;
