@@ -27,6 +27,8 @@ const array<string, DECK_SIZE> cards{
          "KH", "KC", "KD", "KS",
 };
 
+
+void shuffleAndDeal();
 void initializeDeck(array<const string*, DECK_SIZE>* deck);
 void displayDeck(array<const string*, DECK_SIZE> deck);
 void shuffleDeck(array<const string*, DECK_SIZE>* deck);
@@ -50,9 +52,15 @@ int main()
 
     cout << "Welcome " << player1Name << endl;
 
+    array<const string*, DECK_SIZE> deck;
+    initializeDeck(&deck);
+    shuffleDeck(&deck);
+    displayDeck(deck);
 
     return 0;
 }
+
+
 
 // This method will shuffle the deck of cards
 void shuffleDeck(array<const string*, DECK_SIZE>* deck) {
