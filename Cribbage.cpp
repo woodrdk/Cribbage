@@ -28,7 +28,6 @@ const array<string, DECK_SIZE> cards{
 };
 
 
-void shuffleAndDeal();
 void initializeDeck(array<const string*, DECK_SIZE>* deck);
 void displayDeck(array<const string*, DECK_SIZE> deck);
 void shuffleDeck(array<const string*, DECK_SIZE>* deck);
@@ -51,15 +50,32 @@ int main()
     cin >> player1Name;
 
     cout << "Welcome " << player1Name << endl;
-
+    
     array<const string*, DECK_SIZE> deck;
     initializeDeck(&deck);
     shuffleDeck(&deck);
     displayDeck(deck);
-
+    
     // deal 6 cards to each player face down
+    
+    string whoseCrib;
+    
+    string cribCards[4];
+    cout << "Please place two cards into the crib " << endl;
+    string card1;
+    string card2; 
+    cout << "Which is your first card pick for the crib? " << flush;
+    cin >> card1;
+    cout << "Which is your second card pick for the crib? " << flush;
+    cin >> card2;
+    
     // each player puts 2 cards into crib
+    cribCards[0] = card1;
+    cribCards[1] = card2;
+    cribCards[2] = card2; // need to mod to comp pick
+    cribCards[3] = card2; // need to mod to comp pick
 
+    string playCard; // card that is flipped in the deck
     return 0;
 }
 
