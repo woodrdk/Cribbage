@@ -12,7 +12,6 @@ string Player::toString() {
 	ss << score;
 	ss << "crib: ";
 	ss << crib;
-
 	return ss.str();
 }
 
@@ -26,7 +25,9 @@ string Player::getName() {
 	return name;
 }
 
-
+void Player::setCards(string cards[5]) {
+	cards = cards;
+}
 
 void Player::setScore(int score) {
 	score = score;

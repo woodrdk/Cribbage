@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <random>
 #include <ctime>
+#include "player.h"
 using namespace std;
 // Defined the decksize
 
@@ -45,16 +46,21 @@ int main()
     cout << "This game will have one computer player along with you" << endl;
    
     // make players
+    Player player1; 
+    Player player2;
     string player1Name;
     cout << "What is the name of player 1? " << flush;
     cin >> player1Name;
-
-    cout << "Welcome " << player1Name << endl;
+    player1.setName(player1Name);
+    string names[] = { "Bob", "Draven", "Kellan", "Amie", "Ace", "Charlene", "Leann", "Dan" };
+    srand(time(0));
+    player2.setName(names[(rand() % 7) + 1 ]);
+    cout << "Welcome " << player1.getName() << " you are playing against " << player2.getName() << endl;
     
-    array<const string*, DECK_SIZE> deck;
+    /*array<const string*, DECK_SIZE> deck;
     initializeDeck(&deck);
     shuffleDeck(&deck);
-    displayDeck(deck);
+    displayDeck(deck);*/
     
     // deal 6 cards to each player face down
     

@@ -9,6 +9,7 @@ private:
 	string name;
 	int score;
 	int crib;
+	string cards[5];
 
 public:
 	string toString();
@@ -16,5 +17,6 @@ public:
 	string getName();
 	void setScore(int score);
 	int seeScore();
+	void setCards(string cards[5]);
 	
 };
