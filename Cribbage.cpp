@@ -57,13 +57,20 @@ int main()
     player2.setName(names[(rand() % 7) + 1 ]);
     cout << "Welcome " << player1.getName() << " you are playing against " << player2.getName() << endl;
     
-    /*array<const string*, DECK_SIZE> deck;
+    array<const string*, DECK_SIZE> deck;
     initializeDeck(&deck);
     shuffleDeck(&deck);
-    displayDeck(deck);*/
+    /*displayDeck(deck);*/
     
     // deal 6 cards to each player face down
     
+    string cards1[6] = {};
+    for (int i = 0; i < 6; i++) {
+        // take the cards form the deck and assign to cards1
+        cards1[i] = cards[i]; // not proper
+        cout << cards1[i] << endl;
+    }
+    player1.setCards(cards1);
     string whoseCrib;
     
     string cribCards[4];

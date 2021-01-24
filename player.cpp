@@ -29,6 +29,8 @@ void Player::setCards(string cards[5]) {
 	cards = cards;
 }
 
+// make getCards
+
 void Player::setScore(int score) {
 	score = score;
 }
