@@ -73,20 +73,21 @@ int main()
     player1.setCards(cards1);
     string whoseCrib;
     
-    string cribCards[4];
-    cout << "Please place two cards into the crib " << endl;
-    string card1;
-    string card2; 
-    cout << "Which is your first card pick for the crib? " << flush;
-    cin >> card1;
-    cout << "Which is your second card pick for the crib? " << flush;
-    cin >> card2;
-    
-    // each player puts 2 cards into crib
-    cribCards[0] = card1;
-    cribCards[1] = card2;
-    cribCards[2] = card2; // need to mod to comp pick
-    cribCards[3] = card2; // need to mod to comp pick
+    // will assign to player crib instead of here and just pull from player crib for use
+    //string cribCards[4];
+    //cout << "Please place two cards into the crib " << endl;
+    //string card1;
+    //string card2; 
+    //cout << "Which is your first card pick for the crib? " << flush;
+    //cin >> card1;
+    //cout << "Which is your second card pick for the crib? " << flush;
+    //cin >> card2;
+    //
+    //// each player puts 2 cards into crib
+    //cribCards[0] = card1;
+    //cribCards[1] = card2;
+    //cribCards[2] = card2; // need to mod to comp pick
+    //cribCards[3] = card2; // need to mod to comp pick
 
     string playCard; // card that is flipped in the deck
     return 0;
