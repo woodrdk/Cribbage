@@ -26,10 +26,14 @@ string Player::getName() {
 }
 
 void Player::setCards(string cards[5]) {
-	cards = cards;
+	cards = cards; // assign to player cards
 }
 
 // make getCards
+
+void Player::setCrib(string cards[4]) {
+	cards = cards  // assign to player crib
+}
 
 void Player::setScore(int score) {
 	score = score;

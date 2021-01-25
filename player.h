@@ -8,7 +8,7 @@ class Player
 private:
 	string name;
 	int score;
-	int crib;
+	string crib[4];
 	string cards[5];
 
 public:
@@ -18,5 +18,5 @@ public:
 	void setScore(int score);
 	int seeScore();
 	void setCards(string cards[5]);
-	
+	void setCrib(string cards[4]);
 };
