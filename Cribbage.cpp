@@ -35,6 +35,7 @@ void shuffleDeck(array<const string*, DECK_SIZE>* deck);
 void rules();
 void seeRules();
 void playerNames(Player player1, Player player2);
+
 /// <summary>
 /// Cribbage game play 
 /// </summary>
@@ -44,10 +45,10 @@ int main()
     const int endGamePoints = 121;
     seeRules();
     // make players
-    Player player1;
-    Player player2;
+    Player player1, player2;
     playerNames(player1, player2);
     
+
     array<const string*, DECK_SIZE> deck;
     initializeDeck(&deck);
     shuffleDeck(&deck);
@@ -84,9 +85,13 @@ int main()
     return 0;
 }
 
+/// <summary>
+/// This will get and assign the player names
+/// </summary>
+/// <param name="player1">Player 1</param>
+/// <param name="player2">Player 2 - computer</param>
 void playerNames(Player player1, Player player2) {
     string player1Name;
-
     cout << "This game will have one computer player along with you" << endl;
     cout << "What is the name of player 1? " << flush;
     cin >> player1Name;
