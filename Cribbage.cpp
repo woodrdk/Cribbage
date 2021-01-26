@@ -35,6 +35,7 @@ void shuffleDeck(array<const string*, DECK_SIZE>* deck);
 void rules();
 void seeRules();
 void playerNames(Player player1, Player player2);
+void playersSetCrib(Player player1, Player player2, int who);
 
 /// <summary>
 /// Cribbage game play 
@@ -48,12 +49,32 @@ int main()
     Player player1, player2;
     playerNames(player1, player2);
     
-
+    bool isGameWon = false;
+    
     array<const string*, DECK_SIZE> deck;
     initializeDeck(&deck);
     shuffleDeck(&deck);
     /*displayDeck(deck);*/
-    
+    int counter = 0;
+    int whoseCrib = 0;
+    while (!isGameWon) {
+        if (counter / 2 == 0) {
+            whoseCrib = 0;
+        }
+        else {
+            whoseCrib = 1;
+        }
+        string playCard;
+        // deal 6 cards to each player face down
+        // pick 2 cards to set to crib
+        playersSetCrib(player1, player2, whoseCrib);
+        // flip over the play card
+        // play cards till empty hands
+        // calculate end of round points
+        // calculate cribbage points
+        counter++;
+    }
+
     // deal 6 cards to each player face down
     
     string cards1[6] = {};
@@ -63,26 +84,35 @@ int main()
         cout << cards1[i] << endl;
     }
     player1.setCards(cards1);
-    string whoseCrib;
     
-    // will assign to player crib instead of here and just pull from player crib for use
-    //string cribCards[4];
-    //cout << "Please place two cards into the crib " << endl;
-    //string card1;
-    //string card2; 
-    //cout << "Which is your first card pick for the crib? " << flush;
-    //cin >> card1;
-    //cout << "Which is your second card pick for the crib? " << flush;
-    //cin >> card2;
-    //
+    
+
+
+    string playCard; // card that is flipped in the deck
+    return 0;
+}
+void playersSetCrib(Player player1, Player player2, int who) {
+    // will assign to player crib 
+    
+    cout << "Please place two cards into the crib " << endl;
+    string card1;
+    string card2; 
+    cout << "Which is your first card pick for the crib? " << flush;
+    cin >> card1;
+    cout << "Which is your second card pick for the crib? " << flush;
+    cin >> card2;
+    string cribCards[4] = {};
     //// each player puts 2 cards into crib
     //cribCards[0] = card1;
     //cribCards[1] = card2;
     //cribCards[2] = card2; // need to mod to comp pick
     //cribCards[3] = card2; // need to mod to comp pick
-
-    string playCard; // card that is flipped in the deck
-    return 0;
+    if (who == 1) {
+        player1.setCrib(cribCards);
+    }
+    else {
+        player2.setCrib(cribCards);
+    }
 }
 
 /// <summary>
