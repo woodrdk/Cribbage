@@ -34,7 +34,7 @@ void displayDeck(array<const string*, DECK_SIZE> deck);
 void shuffleDeck(array<const string*, DECK_SIZE>* deck);
 void rules();
 void seeRules();
-
+void playerNames(Player player1, Player player2);
 /// <summary>
 /// Cribbage game play 
 /// </summary>
@@ -43,19 +43,10 @@ int main()
 {
     const int endGamePoints = 121;
     seeRules();
-    cout << "This game will have one computer player along with you" << endl;
-   
     // make players
-    Player player1; 
+    Player player1;
     Player player2;
-    string player1Name;
-    cout << "What is the name of player 1? " << flush;
-    cin >> player1Name;
-    player1.setName(player1Name);
-    string names[] = { "Bob", "Draven", "Kellan", "Amie", "Ace", "Charlene", "Leann", "Dan" };
-    srand(time(0));
-    player2.setName(names[(rand() % 7) + 1 ]);
-    cout << "Welcome " << player1.getName() << " you are playing against " << player2.getName() << endl;
+    playerNames(player1, player2);
     
     array<const string*, DECK_SIZE> deck;
     initializeDeck(&deck);
@@ -93,7 +84,18 @@ int main()
     return 0;
 }
 
+void playerNames(Player player1, Player player2) {
+    string player1Name;
 
+    cout << "This game will have one computer player along with you" << endl;
+    cout << "What is the name of player 1? " << flush;
+    cin >> player1Name;
+    player1.setName(player1Name);
+    string names[] = { "Bob", "Draven", "Kellan", "Amie", "Ace", "Charlene", "Leann", "Dan" };
+    srand(time(0));
+    player2.setName(names[(rand() % 7) + 1]);
+    cout << "Welcome " << player1.getName() << " you are playing against " << player2.getName() << endl;
+}
 
 // This method will shuffle the deck of cards
 void shuffleDeck(array<const string*, DECK_SIZE>* deck) {

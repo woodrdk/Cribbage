@@ -32,7 +32,7 @@ void Player::setCards(string cards[5]) {
 // make getCards
 
 void Player::setCrib(string cards[4]) {
-	cards = cards  // assign to player crib
+	cards = cards; // assign to player crib
 }
 
 void Player::setScore(int score) {
