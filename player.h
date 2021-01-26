@@ -19,4 +19,5 @@ public:
 	int seeScore();
 	void setCards(string cards[5]);
 	void setCrib(string cards[4]);
+	void seeCrib();
 };

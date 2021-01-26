@@ -68,7 +68,12 @@ int main()
         // deal 6 cards to each player face down
         // pick 2 cards to set to crib
         playersSetCrib(player1, player2, whoseCrib);
+        player1.seeCrib();// for testing 
+        cout << endl;
+        player2.seeCrib();// for testing 
+
         // flip over the play card
+        // playCard =
         // play cards till empty hands
         // calculate end of round points
         // calculate cribbage points
@@ -84,10 +89,7 @@ int main()
         cout << cards1[i] << endl;
     }
     player1.setCards(cards1);
-    
-    
-
-
+   
     string playCard; // card that is flipped in the deck
     return 0;
 }
@@ -97,16 +99,18 @@ void playersSetCrib(Player player1, Player player2, int who) {
     cout << "Please place two cards into the crib " << endl;
     string card1;
     string card2; 
+    string card3;
+    string card4;
     cout << "Which is your first card pick for the crib? " << flush;
     cin >> card1;
     cout << "Which is your second card pick for the crib? " << flush;
     cin >> card2;
     string cribCards[4] = {};
     //// each player puts 2 cards into crib
-    //cribCards[0] = card1;
-    //cribCards[1] = card2;
-    //cribCards[2] = card2; // need to mod to comp pick
-    //cribCards[3] = card2; // need to mod to comp pick
+    cribCards[0] = card1;
+    cribCards[1] = card2;
+    cribCards[2] = card3; // comp pick
+    cribCards[3] = card4; // comp pick
     if (who == 1) {
         player1.setCrib(cribCards);
     }

@@ -25,14 +25,25 @@ string Player::getName() {
 	return name;
 }
 
-void Player::setCards(string cards[5]) {
-	cards = cards; // assign to player cards
+void Player::setCards(string setCards[5]) {
+	
+	//cards = setCards; // assign to player cards
 }
 
 // make getCards
 
-void Player::setCrib(string cards[4]) {
-	cards = cards; // assign to player crib
+void Player::setCrib(string cribCards[4]) {
+	for (int i = 0; i < 4; i++) {
+		crib[i] = cribCards[i];
+    //	cout << crib[i] << " " << endl;
+	}
+}
+
+void Player::seeCrib() {
+	for (int i = 0; i < 4; i++) {
+		cout << crib[i] << " | " << flush;
+	}
+	cout << endl;
 }
 
 void Player::setScore(int score) {
